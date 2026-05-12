@@ -9,4 +9,9 @@ event contains a user_id and a user_name
 it means the both the publisher and subscriber are connecting to the same message broker on the same machine.
 this is how the communicate, the poublisher sens events to that broker, and the subscriber lsitens for events from that same broker. they bever talk to each other directly
 
+## what happened in the subscirber and publisher
+the publisher sent 5 events to rabbit mq. rabbitmq held them in a queue. the subscriber, which was already connected and listening picked them up one byu one and processed/printed each one.
+
+the publisher and subscriber never talked to each other directly, rabbitmq was the middleman and thats the whole point of event driven architecture
+
 
