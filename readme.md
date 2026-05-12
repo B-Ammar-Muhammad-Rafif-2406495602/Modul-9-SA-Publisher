@@ -16,3 +16,6 @@ the publisher and subscriber never talked to each other directly, rabbitmq was t
 
 ## Monitoring chart
 each spike = one time i ran the publisher, the publisher sent 5 events at once to rabbitmq, which caused a brief burst of activity (the spike) then immediately dropped back to 0 because the subscriber processed them all instantly and the publisher finished.   
+
+## why the total number of queue is as such
+the total number depends on how many times we ran the publisher, so if we were to ran it twice quickly, tjats 10 events queued up at once. the number we are seeing is just however many event were sitting in rabbitmq waiting to be processed at that moment before the subscriber caught up
