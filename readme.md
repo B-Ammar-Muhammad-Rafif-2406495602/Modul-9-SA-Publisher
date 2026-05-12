@@ -14,4 +14,5 @@ the publisher sent 5 events to rabbit mq. rabbitmq held them in a queue. the sub
 
 the publisher and subscriber never talked to each other directly, rabbitmq was the middleman and thats the whole point of event driven architecture
 
-
+## Monitoring chart
+each spike = one time i ran the publisher, the publisher sent 5 events at once to rabbitmq, which caused a brief burst of activity (the spike) then immediately dropped back to 0 because the subscriber processed them all instantly and the publisher finished.   
